@@ -108,6 +108,8 @@ fn main() {
     writer.write_image_data(&atlas_buf).unwrap();
     let out_metadata_json = serde_json::to_vec_pretty(&FontMetadata {
         line_height: (font_face.size_metrics().unwrap().height >> 6) as u32,
+        atlas_width: font_spec.atlas_width,
+        atlas_height: font_spec.atlas_height,
         atlas_path: Path::new(".").join(out_image_path.file_name().unwrap()),
         glyphs: glyph_metadata,
     })

@@ -6,6 +6,8 @@ use serde::{Serialize, Deserialize};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FontMetadata {
     pub atlas_path: PathBuf,
+    pub atlas_width: u32,
+    pub atlas_height: u32,
     pub line_height: u32,
     pub glyphs: BTreeMap<String, GlyphMetadata>,
 }
